@@ -24,7 +24,7 @@ namespace Dio.Bank
                     InserirConta();
                     break;
                     case "3":
-                  //  Transferir();
+                    Transferir();
                     break;
                     case "4":
                     Sacar();
@@ -45,6 +45,22 @@ namespace Dio.Bank
 
             Console.WriteLine("Obrigado por utilizar nossos serviços.");
             Console.ReadLine();
+        }
+
+// Inserindo Transferir
+
+        private static void Transferir()
+        {
+            Console.WriteLine("Digite o código da conta de origem: ");
+            int indiceContaOrigem = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite o código da conta de destino: ");
+            int indiceContaDestino = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite o valor a ser transferido: ");
+            double valorTransferencia = double.Parse(Console.ReadLine());
+
+            listContas[indiceContaOrigem].Transferir(valorTransferencia, listContas[indiceContaDestino]);
         }
 
 // inserindo valor a ser sacado da conta
